@@ -58,6 +58,14 @@ String name=attr.getValue("Mani-Class");
 	4. 根据得到的主类名创建Class对象: `Class c=Class.forName(name);`
 
 
+6.	可执行jar
+	
+	现有com/fy/App.class
+
+	jar -cvfe *.jar com.fy.App com
+
+
 **Java调用类的顺序：java\lib\ext中的类--->Manifest.mf中指定的类-->当前目录中的类-->set CLASSPATH中指定的类。**
+
 
 2019/7/27 15:29:22 
