@@ -1,4 +1,4 @@
-# 查看系统硬件信息 #
+# 查看系统信息 #
 	
 	
 
@@ -6,13 +6,16 @@
  
 		lscpu,
 		cat /proc/cpuinfo
+		pidstat 监控全部或指定进程占用系统资源的情况.
+		mpstat 实时系统监控工具 文件/proc/stat
+		slabtop 实时显示内核slab缓存信息 /proc/slabinfo
 
  - member:
  
 		free -m
 		cat /proc/meminfo
 		dmidecode -t memory
-	
+		vmstat virtual meomory statistics
  - dmidecode -t bios
 	
  - 硬盘分区:
@@ -21,12 +24,25 @@
 		fdisk -l
 		df -H
 		
+ - I/O
+	 	
+		iozone 文件系统的benchmark
+		iotop	用来监视磁盘I/O使用状况top工具
+		blktrace 显示block的I/O详细信息的工具.查看CPU,网卡,tty设备
+		iostat
+
  - 查看网络接口:
  
 		ifconfig
 		ip addr
-		ethtool eth0
-		
+		ethtool eth0 查看网卡信息
+		sar	System Activity Reporter 系统活动情况报告
+		tcpdump
+		netstat
+		nicstat 实时监控网卡及网络流量
+		mtr my traceroute 把ping 和traceroute并入一个程序的网络诊断工具
+		lsof list open files 列出系统打开文件工具
+
  - 查看所有卡槽信息:
  
 		lspci
@@ -49,11 +65,22 @@
 
 			DMI充当了管理工具和系统层之间接口的角色。它建立了标准的可管理系统更加方便了电脑厂商和用户对系统的了解。DMI的主要组成部分是Management Information Format(MIF)数据库。这个数据库包括了所有有关电脑系统和配件的信息。通过DMI，用户可以获取序列号、电脑厂商、串口信息以及其它系统配件信息。
 		
+-	综合工具
 
+	top
+
+	gprof
+
+	oprofile
+
+	dstat
+
+	strace
 
 	vmstat
+
 	iostat
-	netstat
+	
 	
 	du
 	chown
